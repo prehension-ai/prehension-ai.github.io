@@ -6,7 +6,7 @@ Last edited time: March 30, 2026 1:15 PM
 
 There are two main hooks you can subscribe to for information on gesture-related events: 
 
-**Gesture Recognized:**
+**Gesture Recognized**
 
 ```csharp
 public void SubscribeToGestureRecognized(OnGestureRecognized func)
