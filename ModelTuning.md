@@ -2,6 +2,8 @@
 
 While the model and recognition algorithm can get a lot just from the samples you record and upload, there are a few things you can do to help it produce the desired output.
 
+*(alpha note: I'm particularly interested in your experience around model accuracy, and what you think could be done to improve your ability to develop with it. Please send me all your feedback!! -Alex)*
+
 ### Specifying Opposing Gestures
 
 Each gesture in your config has an optional ‘Opposite Gesture’ field. This is for specifying gestures that tend to contain opposing movements and helping the model disambiguate between them.
@@ -30,7 +32,10 @@ Performing gestures and watching how the model reacts can provide insights on ho
 
 **Improving training data**: If the model itself isn't recognizing gestures correctly, your best bet to fix it is altering your training data somehow. Adding samples to the 'Null' set that share some characteristics with your target gestures, but not all, can be particularly effective.
 
-To make this more concrete, consider the following example: imagine you're designing an application that needs to know when the user swipes right or left with their hand, and when they punch. So you record a few samples of each - swiping left and right generally have an open palm pose, moving sideways, and punch has a closed fist moving forward. During testing you find that even if you don't really 'punch', as long as you start to close your fist, the model says your punching. What happened?
+To make this more concrete, consider the following example: imagine you're designing an application that needs to know when the user swipes right or left with their hand, and when they punch. So you record a few samples of each - swiping left and right generally have an open palm pose, moving sideways, and punch has a closed fist moving forward. During testing you find that even if you don't really 'punch', as long as you start to close your fist, the model says you're punching. What happened?
 
+Generally speaking the model is quite capable, but also quite lazy. Since 'punch' was the only gesture in your training data that included a closed fist, it learned that all closed fists equal punches. Fixing this could involve adding a few samples to your 'Null' set where you close your fist, but don't punch forward - forcing the model to learn the difference.
 
+**Improving recoginition algorithm parameters**: If the model is firing correctly but gestures aren't getting recognized at the Unity level (or getting recognized too much), try tweaking the parameters exposed in the PrehensionManager. Specifying gestures as opposites of each other can also help  in this area.
 
+*(again - very interested in your experience here. If there are tools you think would help you tune the performance more effectively, or things that just need to be improved, please let me know!)*
