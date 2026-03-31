@@ -32,8 +32,7 @@ Once you’ve got your config set up, press play in the recording scene. Once th
 From there, you can select (via point and pinch) the gesture and sample you want to record data for:
 ![Recording a sample](./recordsample.jpg)
 
-Select a sample, and then click ‘Record Data’ in the bottom right corner. You’ll see a countdown, and then the plugin will capture your hand movement. Once it’s done recording you can see the movement played back to you. If you don’t like it, you can record again and it will be overwritten. Generally the best samples should contain only the gesture of interest, and little extraneous movement besides. 'Null' samples should include a variety of movements - some moving, some more still, different hand poses, etc. For more info on recording null samples correctly, see [Model Tuning](./ModelTuning.md)
-[Picture. Also is the recording length exposed for modding?]
+Select a sample, and then click ‘Record Data’ in the bottom right corner. You’ll see a countdown, and then the plugin will capture your hand movement. Once it’s done recording you can see the movement played back to you. If you don’t like it, you can record again and it will be overwritten. Generally the best samples should contain only the gesture of interest, and little extraneous movement besides. 'Null' samples should include a variety of movements - some moving, some more still, different hand poses, etc. For more info on recording null samples correctly, see [Model Tuning](./ModelTuning.md).
 
 Once you’re happy with your recordings, quit the scene and return to the Inspector view of the Prehension config.
 
@@ -42,6 +41,7 @@ At the bottom of the inspector are 3 buttons, 2 of which are relevant for us rig
 
 The next and most important step is to generate the model itself.
 ![Generate model](./generatemodelbutton.png)
+
 This process will take significantly longer, in the realm of 5-10 minutes depending on how many samples you uploaded. You should get a progress bar in the Unity background task monitor, and once it completes you should have two files in Assets/StreamingAssets: `model.pte` and `model_vulkan.pte`.
 
 To hook the model outputs into your application code, it's now time to [subscribe to gesture recognition hooks](./SubscribingToGestureRecognitionHooks.md).
