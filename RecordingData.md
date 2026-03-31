@@ -26,11 +26,11 @@ You’ll need to create all the samples you wanted to record *before* entering t
 For every config, you’ll need to include a ‘Null’ gesture - this is the gesture that the model will detect when you’re not doing anything. After you add it, scroll down to the bottom of the config and mark it as such.
 ![Null gesture selection](./nullgestureselection.png)
 
-Once you’ve got your config set up, press play in the recording scene. Once the scene loads you should see a panel with buttons for each of the samples you created in your config.
-[picture from inside headset of panel]
+Once you’ve got your config set up, press play in the recording scene. Once the scene loads you should see a panel with buttons for each of the gestures you created in your config.
+![Choosing a gesture to record samples for](./recordgesture.jpg)
 
-From there, you can select (via point and pinch) the gesture you want to record data for:
-[picture of sample screen]
+From there, you can select (via point and pinch) the gesture and sample you want to record data for:
+![Recording a sample](./recordsample.jpg)
 
 Select a sample, and then click ‘Record Data’ in the bottom right corner. You’ll see a countdown, and then the plugin will capture your hand movement. Once it’s done recording you can see the movement played back to you. If you don’t like it, you can record again and it will be overwritten. Generally the best samples should contain only the gesture of interest, and little extraneous movement besides. 'Null' samples should include a variety of movements - some moving, some more still, different hand poses, etc. For more info on recording null samples correctly, see [Model Tuning](./ModelTuning.md)
 [Picture. Also is the recording length exposed for modding?]
