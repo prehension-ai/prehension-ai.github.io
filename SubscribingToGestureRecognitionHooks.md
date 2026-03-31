@@ -1,10 +1,6 @@
 # Subscribing to Gesture Recognition Hooks
 
-Author: Alex Bertrand
-Status: Draft
-Last edited time: March 30, 2026 1:15 PM
-
-There are two main hooks you can subscribe to for information on gesture-related events: 
+To start recognizing gestures, drag a PrehensionManager into your scene (from the plugin's Prefabs folder). It'll need a reference to your PrehensionConfig (which should be in `Assets/PrehensionData`) and your Head transform (for Meta, this is CenterEyeAnchor in the Camera Rig). You can then reference the PrehensionManager in any of your other scripts, and use it to hook into gesture information. There are two main hooks you can subscribe to for information on gesture-related events: 
 
 **Gesture Recognized**
 
