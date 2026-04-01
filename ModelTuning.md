@@ -26,7 +26,9 @@ Note that these values are loaded in to the algorithm at start time, so you'll n
 Included with the Prehension plugin is a tool to allow you to view the raw output of the model. This can be *extremely* effective in helping you tune the algorithm's performance, as it allows you to see exactly what's going on under the hood and why gestures may or may not be getting recognized. Sometimes errors will be a result of the training data/model itself, and sometimes they'll be a result of the recognition on top of the model in Unity.
 
 Make sure 'Log Softmax Over UDP' is checked in the Prehension Manager in your main scene, run the monitoring tool, and then run the application. You should have an output like this:
+
 ![Here's a peace sign](./peacewithsoftmaxoutput.png)
+
 As you can see here, the model is tracking 'peace' (the red line) now that the gesture has been performed. That's good!
 
 Performing gestures and watching how the model reacts can provide insights on how to improve performance. Generally improvements fall into one of two categories:
