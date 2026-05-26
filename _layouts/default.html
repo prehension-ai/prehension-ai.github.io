@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <title>{{ page.title | default: site.title }}</title>
+    <style>
+      .page-wrapper {
+        display: flex;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+        gap: 2rem;
+      }
+
+      .sidebar {
+        flex: 0 0 200px;
+        min-width: 160px;
+      }
+
+      .sidebar nav {
+        position: sticky;
+        top: 2rem;
+      }
+
+      .sidebar-section-label {
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: #586069;
+        margin: 0 0 0.5rem 0;
+        padding-bottom: 0.4rem;
+        border-bottom: 1px solid #e1e4e8;
+      }
+
+      .version-switcher {
+        margin-bottom: 1.5rem;
+      }
+
+      .version-switcher select {
+        width: 100%;
+        padding: 0.35rem 0.5rem;
+        font-size: 0.875rem;
+        border: 1px solid #e1e4e8;
+        border-radius: 4px;
+        background: #fff;
+        color: #24292e;
+        cursor: pointer;
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath fill='%23586069' d='M0 0l5 6 5-6z'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 0.5rem center;
+        padding-right: 1.75rem;
+      }
+
+      .version-switcher select:focus {
+        outline: none;
+        border-color: #0366d6;
+        box-shadow: 0 0 0 3px rgba(3,102,214,0.15);
+      }
+
+      .page-nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .page-nav ul li {
+        margin: 0;
+      }
+
+      .page-nav ul li a {
+        display: block;
+        padding: 0.35rem 0.5rem;
+        font-size: 0.875rem;
+        color: #24292e;
+        text-decoration: none;
+        border-radius: 4px;
+        border-left: 3px solid transparent;
+      }
+
+      .page-nav ul li a:hover {
+        background-color: #f6f8fa;
+        color: #0366d6;
+      }
+
+      .page-nav ul li a.active {
+        color: #0366d6;
+        border-left-color: #0366d6;
+        background-color: #f1f8ff;
+        font-weight: 600;
+      }
+
+      .main-content {
+        flex: 1;
+        min-width: 0;
+      }
+
+      .main-content img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      #header_wrap {
+        background-color: #159957;
+        background-image: linear-gradient(120deg, #155799, #159957);
+      }
+
+      #header_wrap .inner {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 1.5rem 1rem;
+      }
+
+      #project_title {
+        font-size: 1.75rem;
+        margin: 0 0 0.25rem 0;
+      }
+
+      #project_tagline {
+        font-size: 1rem;
+        margin: 0;
+        opacity: 0.8;
+      }
+
+      #footer_wrap {
+        border-top: 1px solid #e1e4e8;
+        margin-top: 2rem;
+      }
+
+      #footer_wrap .inner {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 1rem;
+        font-size: 0.8rem;
+        color: #586069;
+      }
+
+      @media (max-width: 640px) {
+        .page-wrapper {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .sidebar {
+          flex: none;
+        }
+
+        .sidebar nav {
+          position: static;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header_wrap">
+      <header class="inner">
+        <h1 id="project_title">{{ site.title | default: site.github.repository_name }}</h1>
+        <p id="project_tagline">{{ site.description | default: site.github.project_tagline }}</p>
+      </header>
+    </div>
+
+    <div class="page-wrapper">
+      <aside class="sidebar">
+        <nav>
+          {% assign url_parts = page.url | split: '/' %}
+          {% assign current_version = url_parts[1] %}
+          {% assign page_slug = url_parts[2] %}
+
+          <div class="version-switcher">
+            <p class="sidebar-section-label">Version</p>
+            <select onchange="window.location.href=this.value" aria-label="Select version">
+              {% for v in site.data.versions %}
+                {% if page_slug != '' %}
+                  {% assign target_url = '/' | append: v.id | append: '/' | append: page_slug | append: '/' %}
+                {% else %}
+                  {% assign target_url = '/' | append: v.id | append: '/' %}
+                {% endif %}
+                <option value="{{ target_url }}"
+                  {% if v.id == current_version %}selected{% endif %}>
+                  {{ v.label }}
+                </option>
+              {% endfor %}
+            </select>
+          </div>
+
+          <div class="page-nav">
+            <p class="sidebar-section-label">Contents</p>
+            <ul>
+              {% assign nav_pages = site.pages | where: "version", current_version | sort: "nav_order" %}
+              {% for p in nav_pages %}
+                <li>
+                  <a href="{{ p.url | relative_url }}"
+                     {% if p.url == page.url %}class="active"{% endif %}>
+                    {{ p.title }}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </nav>
+      </aside>
+
+      <main class="main-content">
+        {{ content }}
+      </main>
+    </div>
+
+    <div id="footer_wrap">
+      <footer class="inner">
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+  </body>
+</html>

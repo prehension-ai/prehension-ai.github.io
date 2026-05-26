@@ -1,3 +1,9 @@
+---
+title: Home
+nav_order: 1
+version: beta
+---
+
 # prehension-ai.github.io
 Docs for Prehension SDK and plugins.
 

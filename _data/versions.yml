@@ -1,0 +1,5 @@
+- id: alpha
+  label: Alpha
+- id: beta
+  label: Beta
+  latest: true
