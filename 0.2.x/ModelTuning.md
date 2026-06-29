@@ -23,6 +23,8 @@ Note that these values are loaded in to the algorithm at start time, so you'll n
 
 Included with the Prehension plugin is a tool to allow you to view the raw output of the model. This can be *extremely* effective in helping you tune the algorithm's performance, as it allows you to see exactly what's going on under the hood and why gestures may or may not be getting recognized. Sometimes errors will be a result of the training data/model itself, and sometimes they'll be a result of the recognition on top of the model in Unity.
 
+[Download ModelMonitor.exe](../files/ModelMonitor.exe){: .btn }
+
 Make sure 'Log Softmax Over UDP' is checked in the Prehension Manager in your main scene, run the monitoring tool, and then run the application. You should have an output like this:
 
 ![Here's a peace sign](../peacewithsoftmaxoutput.png)
@@ -38,5 +40,3 @@ To make this more concrete, consider the following example: imagine you're desig
 Generally speaking the model is quite capable, but also quite lazy. Since 'punch' was the only gesture in your training data that included a closed fist, it learned that all closed fists equal punches. Fixing this could involve adding a few samples to your 'Null' set where you close your fist, but don't punch forward - forcing the model to learn the difference.
 
 **Improving recoginition algorithm parameters**: If the model is firing correctly but gestures aren't getting recognized at the Unity level (or getting recognized too much), try tweaking the parameters exposed in the PrehensionManager. Specifying gestures as opposites of each other can also help  in this area.
-
-*(again - very interested in your experience here. If there are tools you think would help you tune the performance more effectively, or things that just need to be improved, please let me know!)*
