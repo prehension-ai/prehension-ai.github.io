@@ -1,10 +1,9 @@
 ---
 title: Home
 nav_order: 1
-version: beta
+version: 0.2.x
 ---
 
-# prehension-ai.github.io
 Docs for Prehension SDK and plugins.
 
 [New Project Setup](./NewProjectSetup.md)
@@ -12,5 +11,7 @@ Docs for Prehension SDK and plugins.
 [Recording Data and Generating a Model](./RecordingData.md)
 
 [Subscribing to Gesture Recognition Hooks](./SubscribingToGestureRecognitionHooks.md)
+
+[Gesture Config Options](./GestureConfigOptions.md)
 
 [Tuning Model Outputs](./ModelTuning.md)

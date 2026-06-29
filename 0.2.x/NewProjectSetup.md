@@ -1,3 +1,9 @@
+---
+title: New Project Setup
+nav_order: 2
+version: 0.2.x
+---
+
 # New Project Setup
 At the moment the only headset Prehension’s SDK is compatible with is Oculus/Meta. More headset support will come in the future!
 
@@ -11,7 +17,7 @@ After you get the hand tracking building block in, skip down to “Step 4: Previ
 
 Now it's time to add the Prehension SDK. Click through Window > Package Management > Package Manager.
 
-Click the plus icon in the top left, choose “Install package from tarball” and find the Prehension SDK.
+Click the plus icon on the top left, choose "Install package from git URL” and point it towards [github.com/prehension-ai/prehension-unity-plugin]().
 
 ### Set Up Your Project
 
@@ -27,8 +33,8 @@ Alex should have given you an api key, a project name, and a project id - if he 
 
 When you run Setup Project you may also get a log message about needing to install TMP Essentials. If you do, follow the instructions! They're needed for the data recording process.
 
-Last thing, you'll also need to check 'Hand Tracking Subsystem' in the Project Settings while you're setting those up.
+Last thing, you'll also need to check 'Hand Tracking Subsystem', 'Hand Interaction Poses, and 'Meta Hand Tracking Aim' in the Project Settings while you're setting those up.
 
-![Checking Hand Tracking Subsystem](./handtrackingsubsystem.png)
+![Checking Hand Tracking Subsystem](../handtrackingsubsystem.png)
 
 Once you've got your project set up, you can move on to [Recording Data](./RecordingData.md)

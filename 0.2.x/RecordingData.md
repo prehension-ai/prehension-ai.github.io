@@ -1,7 +1,7 @@
 ---
 title: Recording Data
 nav_order: 3
-version: beta
+version: 0.2.x
 ---
 
 # Recording Data

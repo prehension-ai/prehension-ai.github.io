@@ -1,7 +1,7 @@
 ---
 title: Subscribing to Gesture Recognition Hooks
 nav_order: 4
-version: beta
+version: 0.2.x
 ---
 
 # Subscribing to Gesture Recognition Hooks
@@ -43,3 +43,23 @@ prehension.SubscribeToGestureCandidate(NewGestureCandidate);
 A function subscribed this way will be called whenever the model recognizes a new gesture candidate. Internally, the model outputs a 'most likely gesture' at every frame. When that gesture switches (say from 'User likely doing nothing' to 'User likely swiping right') a new candidate gesture is registered (in this case 'Swipe Right'). If the model continues to say the user is likely performing that gesture, it will eventually be fully recognized and the OnGestureRecognized event will fire.
 
 This is useful for looking back in time to when a gesture started, for example when determining what a user was pointing at with their hand *before* they started swiping right.
+
+
+**Gesture Released**
+
+```csharp
+public void SubscribeToGestureReleased(OnGestureReleased func)
+
+// Example
+public void OnGestureReleased(string gestureName)
+{
+		Debug.Log($"Gesture {gestureName} has been released");
+}
+
+public PrehensionManager prehension;
+prehension.SubscribeToGestureReleased(OnGestureReleased);
+```
+
+A function subscribed this way will be called whenever a gesture designated in the config as 'Fire and Hold' (see [Gesture Config Options](./GestureConfigOptions.md)) is released. Note that this event will not fire if the gesture isn't marked as such.
+
+This is useful for gestures that you expect the player to maintain for an indefinite amount of time.

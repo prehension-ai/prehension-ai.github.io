@@ -1,3 +1,9 @@
+---
+title: New Project Setup
+nav_order: 2
+version: alpha
+---
+
 # New Project Setup
 At the moment the only headset Prehension’s SDK is compatible with is Oculus/Meta. More headset support will come in the future!
 
@@ -29,6 +35,6 @@ When you run Setup Project you may also get a log message about needing to insta
 
 Last thing, you'll also need to check 'Hand Tracking Subsystem' in the Project Settings while you're setting those up.
 
-![Checking Hand Tracking Subsystem](./handtrackingsubsystem.png)
+![Checking Hand Tracking Subsystem](../handtrackingsubsystem.png)
 
 Once you've got your project set up, you can move on to [Recording Data](./RecordingData.md)

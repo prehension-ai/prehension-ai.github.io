@@ -1,5 +1,5 @@
 - id: alpha
   label: Alpha
-- id: beta
-  label: Beta
+- id: 0.2.x
+  label: 0.2.x
   latest: true
