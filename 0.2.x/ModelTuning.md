@@ -39,4 +39,4 @@ To make this more concrete, consider the following example: imagine you're desig
 
 Generally speaking the model is quite capable, but also quite lazy. Since 'punch' was the only gesture in your training data that included a closed fist, it learned that all closed fists equal punches. Fixing this could involve adding a few samples to your 'Null' set where you close your fist, but don't punch forward - forcing the model to learn the difference.
 
-**Improving recoginition algorithm parameters**: If the model is firing correctly but gestures aren't getting recognized at the Unity level (or getting recognized too much), try tweaking the parameters exposed in the PrehensionManager. Specifying gestures as opposites of each other can also help  in this area.
+**Improving recoginition algorithm parameters**: If the model is firing correctly but gestures aren't getting recognized at the Unity level (or getting recognized too much), try tweaking the parameters exposed in the PrehensionManager and the Prehension Config. For a detailed description of what each parameter means and controls, see [Gesture Config Options](./GestureConfigOptions.md).
