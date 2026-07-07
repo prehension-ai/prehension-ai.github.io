@@ -17,7 +17,7 @@ After you get the hand tracking building block in, skip down to “Step 4: Previ
 
 Now it's time to add the Prehension SDK. Click through Window > Package Management > Package Manager.
 
-Click the plus icon on the top left, choose "Install package from git URL” and point it towards [github.com/prehension-ai/prehension-unity-plugin.git]().
+Click the plus icon on the top left, choose "Install package from git URL” and point it towards [github.com/prehension-ai/prehension-unity-plugin.git](https://github.com/prehension-ai/prehension-unity-plugin#).
 
 ### Set Up Your Project
 
