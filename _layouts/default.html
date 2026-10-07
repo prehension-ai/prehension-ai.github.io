@@ -150,6 +150,42 @@
         color: #4ECDC4;
       }
 
+      .callout {
+        margin: 1.25rem 0;
+        padding: 0.75rem 1rem;
+        border-left: 4px solid #1DB8A0;
+        border-radius: 4px;
+        background-color: rgba(29, 184, 160, 0.07);
+      }
+
+      .callout > p:first-child {
+        margin-top: 0;
+      }
+
+      .callout > p:last-child {
+        margin-bottom: 0;
+      }
+
+      .callout-title {
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: #1DB8A0;
+        margin-bottom: 0.35rem;
+      }
+
+      .callout-important,
+      .callout-warning {
+        border-left-color: #F4821A;
+        background-color: rgba(244, 130, 26, 0.07);
+      }
+
+      .callout-important .callout-title,
+      .callout-warning .callout-title {
+        color: #F4821A;
+      }
+
       @media (max-width: 640px) {
         .page-wrapper {
           flex-direction: column;

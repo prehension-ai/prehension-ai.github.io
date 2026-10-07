@@ -31,8 +31,10 @@ With the Prehension SDK you should have a new menu button in your menu bar. Choo
 
 `PrehensionProjectDetails.json` and `PrehensionConfig.asset` should exist as soon as you set up your project. `SampleData` will get filled in later.
 
-> [!IMPORTANT]
-> Alex should have given you an api key, a project name, and a project id - if he didn’t, ask him. Once you have them, fill them in to the appropriate fields in `PrehensionProjectDetails.json`
+<div class="callout callout-important" markdown="1">
+<p class="callout-title">Important</p>
+Alex should have given you an api key, a project name, and a project id - if he didn’t, ask him. Once you have them, fill them in to the appropriate fields in `PrehensionProjectDetails.json`
+</div>
 
 When you run Setup Project you may also get a log message about needing to install TMP Essentials. If you do, follow the instructions! They're needed for the data recording process.
 
