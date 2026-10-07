@@ -25,16 +25,19 @@ With the Prehension SDK you should have a new menu button in your menu bar. Choo
 
 - Project Details (project name, id, and access key)
 - Prehension Config (central data overview, more on this later)
-- Sample Data (collection of all the gesture samples you’ve recorded for your gesture recognition model)
+- Sample Data (collection of all the gesture samples you’ve recorded for your gesture recognition model) 
+
+<br>  
 
 `PrehensionProjectDetails.json` and `PrehensionConfig.asset` should exist as soon as you set up your project. `SampleData` will get filled in later.
 
-Alex should have given you an api key, a project name, and a project id - if he didn’t, ask him. Once you have them, fill them in to the appropriate fields in `ProjectDetails.json`
+> [!IMPORTANT]
+> Alex should have given you an api key, a project name, and a project id - if he didn’t, ask him. Once you have them, fill them in to the appropriate fields in `PrehensionProjectDetails.json`
 
 When you run Setup Project you may also get a log message about needing to install TMP Essentials. If you do, follow the instructions! They're needed for the data recording process.
 
 Last thing, you'll also need to check 'Hand Tracking Subsystem', 'Hand Interaction Poses, and 'Meta Hand Tracking Aim' in the Project Settings while you're setting those up.
 
-![Checking Hand Tracking Subsystem](../handtrackingsubsystem.png)
+![Checking Hand Tracking Subsystem](./handtrackingsubsystem.png)
 
 Once you've got your project set up, you can move on to [Recording Data](./RecordingData.md)
