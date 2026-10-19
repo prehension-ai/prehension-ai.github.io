@@ -44,7 +44,14 @@ From there, you can select (via point and pinch) the gesture and sample you want
 
 ![Recording a sample](../recordsample.jpg)
 
-Select a sample, and then click 'Record Data' in the bottom right corner. You'll see a countdown, and then the plugin will capture your hand movement. Once it's done recording you can see the movement played back to you. If you don't like it, you can record again and it will be overwritten. Generally the best samples should contain only the gesture of interest, and little extraneous movement besides. Don't worry about the position of the hand in playback, everything is recorded with respect to your head. 'Null' samples should include a variety of movements - some moving, some more still, different hand poses, etc. Your choice of what sorts of samples to include here is extremely impactful - for more info on recording null samples correctly, see [Model Tuning](./ModelTuning.md).
+Select a sample, and then click 'Record Data' in the bottom right corner. You'll see a countdown, and then the plugin will capture your hand movement. Once it's done recording you can see the movement played back to you. If you don't like it, you can record again and it will be overwritten. Generally the best samples should contain only the gesture of interest, and little extraneous movement besides.
+
+<div class="callout callout-important" markdown="1">
+<p class="callout-title">Important</p>
+Hand position is recorded with respect to your head, both during sample recording and at runtime.
+</div>
+
+'Null' samples should include a variety of movements - some moving, some more still, different hand poses, etc. Your choice of what sorts of samples to include here is extremely impactful - for more info on recording null samples correctly, see [Model Tuning](./ModelTuning.md).
 
 Once you're happy with your recordings, quit the scene and return to the Inspector view of the Prehension config.
 

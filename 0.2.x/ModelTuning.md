@@ -8,6 +8,11 @@ version: 0.2.x
 
 While the model and recognition algorithm can get a lot just from the samples you record and upload, there are a few things you can do to help it produce the desired output.
 
+### General Tips
+
+Remember that hand position is tracked relative to the player's head. If your application causes players to move their head quickly it may be advisable to filter out gestures recognized during that time.
+
+
 ### Tuning Algorithm Parameters
 
 A few parameters are exposed under the PrehensionManager to allow you to tune performance of the model.
